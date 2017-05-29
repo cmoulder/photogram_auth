@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :photos
   has_many :comments
   has_many :likes
-  has_many :liked_photos, :through => likes, :source => :photo
+  has_many :liked_photos, :through => :likes, :source => :photo
   validates :username, uniqueness: {
     message: " is already taken." }, presence: true
 end
